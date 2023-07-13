@@ -13,10 +13,12 @@ class HeaderComponent extends React.Component {
     }
 }
 
-const component1 = React.createElement(HeaderComponent, {text: 'React'});
+const component1 = React.createElement(HeaderComponent, {text: 'React'}, 'Text');
 const component2 = React.createElement(HeaderComponent, {text: 'JavaScript'});
 const parentElement = React.createElement('section', {}, component1, component2);
 
 const root = document.querySelector('#root');
 
 ReactDOM.render(parentElement, root);
+
+
