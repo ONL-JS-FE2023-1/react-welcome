@@ -7,18 +7,28 @@ class Counter extends React.Component {
     }
 
     increment() {
-        // todo: state.count++;
-        console.log('CLICK');
         this.setState({
             count: this.state.count + 1
         })
     }
-    
+
+    decrement() {
+        if(this.state.count > 0) {
+            this.setState({
+                count: this.state.count - 1
+            })
+        } else if (this.state.count === 0) {
+            this.setState({
+                count: 0
+            })
+        }
+    }
+
     render() {
         const h2 = React.createElement('h2', {}, this.state.count);
-        const button = React.createElement('button', {onClick: () => {this.increment()}}, '+');
-        
-        return React.createElement(React.Fragment, {}, h2, button);
+        const buttonIncrement = React.createElement('button', { onClick: () => { this.increment() } }, '+');
+        const buttonDecrement = React.createElement('button', { onClick: () => { this.decrement() } }, '-');
+        return React.createElement(React.Fragment, {}, h2, buttonIncrement, buttonDecrement);
     }
 }
 
@@ -26,3 +36,11 @@ const component = React.createElement(Counter);
 
 const root = document.querySelector('#root');
 ReactDOM.render(component, root);
+
+
+/*
+
+Додати до цього Counter декремент (зменшення лічильника на одиницю)
+Буде плюсом, якщо лічильник при декрементації не буде опускатись нижче нуля
+
+*/
