@@ -15,7 +15,7 @@ class Counter extends React.Component {
     }
 
     decrement() {
-        if(this.state.count > 0) {
+        if (this.state.count > 0) {
             this.setState({
                 count: this.state.count - 1
             })
@@ -27,11 +27,20 @@ class Counter extends React.Component {
     }
 
     render() {
-        const h2 = React.createElement('h2', {}, this.state.count);
-        const buttonIncrement = React.createElement('button', { onClick: () => { this.increment() } }, '+');
-        const buttonDecrement = React.createElement('button', { onClick: () => { this.decrement() } }, '-');
-        return React.createElement(React.Fragment, {}, h2, buttonIncrement, buttonDecrement);
+        return (
+            <>
+                <h2 title="Hello!!">{this.state.count}</h2>
+                <button onClick={() => { this.increment() }}>+</button>
+                <button onClick={() => { this.decrement() }}>-</button>
+            </>
+        )
     }
 }
 
 export default Counter;
+
+/*
+
+Перепишіть все, що у вас було в методі render() на синтаксис JSX
+
+*/

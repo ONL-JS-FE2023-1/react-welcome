@@ -7,7 +7,8 @@ import * as MyMath from './components/Math.js'; // -> іменований ек�
 
 MyMath.superFunc();
 
-const component = React.createElement(Counter);
+// const component = React.createElement(Counter);
+// const component = <Counter />
 
 const root = document.querySelector('#root');
-ReactDOM.render(component, root);
+ReactDOM.render(<Counter />, root);
